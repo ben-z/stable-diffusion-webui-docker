@@ -19,6 +19,7 @@ FROM pytorch/pytorch:2.3.0-cuda12.1-cudnn8-runtime
 ENV DEBIAN_FRONTEND=noninteractive PIP_PREFER_BINARY=1
 
 RUN --mount=type=cache,target=/var/cache/apt \
+  sed -i 's|http://archive.ubuntu.com/ubuntu/|https://mirror.csclub.uwaterloo.ca/ubuntu/|g' /etc/apt/sources.list && \
   apt-get update && \
   # we need those
   apt-get install -y fonts-dejavu-core rsync git jq moreutils aria2 \
@@ -31,7 +32,8 @@ RUN --mount=type=cache,target=/root/.cache/pip \
   git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git && \
   cd stable-diffusion-webui && \
   git reset --hard v1.9.4 && \
-  pip install -r requirements_versions.txt
+  pip install -r requirements_versions.txt && \
+  pip install --upgrade 'typing_extensions>=4.5.0'
 
 
 ENV ROOT=/stable-diffusion-webui
