@@ -4,6 +4,17 @@ Run Stable Diffusion on your machine with a nice UI without any hassle!
 
 ## Setup & Usage
 
+```sh
+docker compose up --build download
+
+docker compose up --build auto
+```
+
+Can also navigate to https://zero01101.github.io/openOutpaint/ to use [openOutpaint](https://github.com/zero01101/openOutpaint) with the API.
+
+
+LEGACY:
+
 Visit the wiki for [Setup](https://github.com/AbdBarho/stable-diffusion-webui-docker/wiki/Setup) and [Usage](https://github.com/AbdBarho/stable-diffusion-webui-docker/wiki/Usage) instructions, checkout the [FAQ](https://github.com/AbdBarho/stable-diffusion-webui-docker/wiki/FAQ) page if you face any problems, or create a new issue!
 
 ## Features
